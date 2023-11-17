@@ -1,0 +1,1 @@
+Basic script to deploy an ubuntu instance on proxmox
