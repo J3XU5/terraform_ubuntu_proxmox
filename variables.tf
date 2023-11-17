@@ -8,6 +8,23 @@ variable "pm_api_token_secret" {
   default = ""
 }
 
-variable "ssh_keys" {
+variable "instance_name" {
+  default = "default_name"
+}
+
+variable "iso_file" {
   default = ""
 }
+
+variable "mem_size" {
+  default = 4096
+}
+
+variable "nbSockets" {
+  default = 1
+}
+
+variable "nbCPU" {
+  default = 1
+}
+
