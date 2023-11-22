@@ -14,7 +14,7 @@ resource "proxmox_vm_qemu" "ubuntu" {
   cipassword = "user"
 
   ssh_user = "user"
-  sshkeys  = tls_private_key.ssh_host_key.private_key_openssh
+  sshkeys  = tls_private_key.ssh_host_key.public_key_openssh
 
   disk {
     type    = "scsi"
@@ -27,7 +27,7 @@ resource "proxmox_vm_qemu" "ubuntu" {
   }
 
   serial {
-    id = 0
+    id   = 0
     type = "/dev/tty0"
   }
 
