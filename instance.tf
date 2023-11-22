@@ -25,13 +25,4 @@ resource "proxmox_vm_qemu" "ubuntu" {
   network {
     model = "virtio"
   }
-
-  serial {
-    id   = 0
-    type = "/dev/tty0"
-  }
-
-  usb {
-    host = "spice"
-  }
 }

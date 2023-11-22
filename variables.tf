@@ -25,6 +25,6 @@ variable "nbSockets" {
 }
 
 variable "nbCPU" {
-  default = 1
+  default = 2
 }
 
