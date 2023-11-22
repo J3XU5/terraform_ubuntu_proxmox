@@ -9,7 +9,7 @@ variable "pm_api_token_secret" {
 }
 
 variable "instance_name" {
-  default = "default_name"
+  default = "defaultname"
 }
 
 variable "iso_file" {
