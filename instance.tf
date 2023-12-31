@@ -16,6 +16,10 @@ resource "proxmox_vm_qemu" "ubuntu" {
   ssh_user = "user"
   sshkeys  = tls_private_key.ssh_host_key.public_key_openssh
 
+  oncreate = false
+
+  scsihw = "virtio-scsi-pci"
+
   disk {
     type    = "scsi"
     storage = "data"
