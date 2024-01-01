@@ -3,7 +3,7 @@ resource "proxmox_vm_qemu" "ubuntu" {
   target_node = "hugoravard"
   desc        = "ubuntu-desktop-computer"
   os_type     = "cloud-init"
-  clone       = "ubuntu-base-ci"
+  clone       = "ubuntu-ci"
 
   memory = var.mem_size
 
@@ -28,5 +28,14 @@ resource "proxmox_vm_qemu" "ubuntu" {
 
   network {
     model = "virtio"
+  }
+
+  vga {
+    type = "serial0"
+  }
+
+  serial {
+    type = "socket"
+    id   = 0
   }
 }
