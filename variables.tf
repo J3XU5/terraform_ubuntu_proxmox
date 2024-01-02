@@ -7,6 +7,14 @@ variable "pm_api_token_id" {
 variable "pm_api_token_secret" {
   default = ""
 }
+#Path to personal ssh key .pub
+variable "personal_key" {
+  default = ""
+}
+
+variable "ip_addr" {
+  default = ""
+}
 
 variable "instance_name" {
   default = "defaultname"

@@ -14,7 +14,7 @@ resource "proxmox_vm_qemu" "ubuntu" {
   cipassword = "user"
 
   ssh_user = "user"
-  sshkeys  = tls_private_key.ssh_host_key.public_key_openssh
+  sshkeys  = "${tls_private_key.ssh_host_key.public_key_openssh}\n${data.local_sensitive_file.perso_key.content}"
 
   oncreate = false
 
@@ -28,7 +28,9 @@ resource "proxmox_vm_qemu" "ubuntu" {
 
   network {
     model = "virtio"
+    bridge = "vmbr0"
   }
+  ipconfig0 = "ip=dhcp"
 
   vga {
     type = "serial0"
