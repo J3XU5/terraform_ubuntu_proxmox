@@ -4,6 +4,7 @@ resource "proxmox_vm_qemu" "ubuntu" {
   desc        = "ubuntu-desktop-computer"
   os_type     = "cloud-init"
   clone       = "ubuntu-ci"
+  vmid = var.vmid
 
   memory = var.mem_size
 
@@ -16,21 +17,20 @@ resource "proxmox_vm_qemu" "ubuntu" {
   ssh_user = "user"
   sshkeys  = "${tls_private_key.ssh_host_key.public_key_openssh}\n${data.local_sensitive_file.perso_key.content}"
 
-  oncreate = false
-
   scsihw = "virtio-scsi-pci"
 
   disk {
     type    = "scsi"
     storage = "data"
     size    = "10G"
+    slot = 2
   }
 
   network {
-    model = "virtio"
+    model  = "virtio"
     bridge = "vmbr0"
   }
-  ipconfig0 = "ip=dhcp"
+  ipconfig0 = "ip=${var.ip_addr}"
 
   vga {
     type = "serial0"

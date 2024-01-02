@@ -24,6 +24,9 @@ variable "iso_file" {
   default = ""
 }
 
+variable "vmid" {
+  default = 0
+}
 variable "mem_size" {
   default = 4096
 }
