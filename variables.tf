@@ -13,7 +13,7 @@ variable "personal_key" {
 }
 
 variable "ip_addr" {
-  default = ""
+  default = "192.168.1.150/24"
 }
 
 variable "instance_name" {
@@ -27,6 +27,7 @@ variable "iso_file" {
 variable "vmid" {
   default = 0
 }
+
 variable "mem_size" {
   default = 4096
 }
