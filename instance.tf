@@ -3,11 +3,12 @@ resource "proxmox_vm_qemu" "ubuntu" {
   target_node = "hugoravard"
   desc        = "justTesting"
   os_type     = "cloud-init"
-  clone       = "debian-template"
+  clone       = "debian-cloudinit"
   vmid        = var.vmid
+  oncreate    = true
 
   memory = var.mem_size
-
+ 
   sockets = var.nbSockets
   cores   = var.nbCPU
 
