@@ -40,3 +40,6 @@ variable "nbCPU" {
   default = 2
 }
 
+variable "desc"{
+  default = ""
+}
