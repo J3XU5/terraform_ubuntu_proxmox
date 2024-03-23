@@ -13,7 +13,7 @@ resource "proxmox_vm_qemu" "ubuntu" {
   cores   = var.nbCPU
 
   ciuser     = "user"
-  cipassword = "NdLersEnseWI"
+  cipassword = var.ci_userpw
 
   ssh_user = "user"
   sshkeys  = "${tls_private_key.ssh_host_key.public_key_openssh}\n${data.local_sensitive_file.perso_key.content}"

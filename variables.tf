@@ -40,6 +40,10 @@ variable "nbCPU" {
   default = 2
 }
 
-variable "desc"{
+variable "desc" {
+  default = ""
+}
+
+variable "ci_userpw" {
   default = ""
 }
