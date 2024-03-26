@@ -47,3 +47,7 @@ variable "desc" {
 variable "ci_userpw" {
   default = ""
 }
+
+variable "gwaddr"{
+  default = ""
+}
