@@ -32,5 +32,5 @@ resource "proxmox_vm_qemu" "ubuntu" {
     model  = "virtio"
     bridge = "vmbr0"
   }
-  ipconfig0 = "ip=${var.ip_addr}"
+  ipconfig0 = [gw=$(var.gwaddr),ip=${var.ip_addr}]
 }
